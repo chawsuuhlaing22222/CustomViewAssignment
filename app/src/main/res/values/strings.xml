@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">CustomUiComponentsAssignment</string>
+    <string name="create_additional_pages">Create additional pages</string>
+    <string name="in_progress">In Progress</string>
+    <string name="lbl_data">Data</string>
+    <string name="lbl_tasks">Tasks</string>
+    <string name="lbl_show_in_days">Show in days</string>
+    <string name="design">#Design</string>
+    <string name="contact_page">Contact page</string>
+    <string name="lbl_closed_tasks">Closed tasks</string>
+    <string name="open_tasks">Open Tasks</string>
+    <string name="create_a_new_task">Create A New Task</string>
+    <string name="save">Save</string>
+    <string name="project_name">PROJECT NAME</string>
+</resources>

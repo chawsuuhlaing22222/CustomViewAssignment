@@ -1,0 +1,462 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    tools:context=".activities.CreateTaskActivity">
+<com.google.android.material.appbar.AppBarLayout
+    android:background="@color/colorPrimaryDark"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolBarOfTask"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_marginTop="@dimen/margin_medium">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/ivBackTask"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:src="@drawable/ic_baseline_arrow_back_ios_black_24dp"
+                app:tint="@color/white" />
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/margin_medium"
+                android:layout_toEndOf="@id/ivBackTask"
+                android:fontFamily="@font/inter"
+                android:textSize="@dimen/text_regular"
+                android:text="@string/create_a_new_task"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/tvSave"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="@dimen/margin_medium_2"
+                android:fontFamily="@font/inter"
+                android:textSize="@dimen/text_regular"
+                android:text="@string/save"
+                android:textColor="@color/colorAccent" />
+
+        </RelativeLayout>
+    </androidx.appcompat.widget.Toolbar>
+</com.google.android.material.appbar.AppBarLayout>
+
+<androidx.core.widget.NestedScrollView
+ app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/rlTaskInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolBarOfTask"
+        >
+        <TextView
+            android:id="@+id/tvClient"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CLIENT"
+            android:layout_marginTop="@dimen/margin_small"
+            android:layout_marginEnd="@dimen/margin_large"
+            android:layout_marginStart="@dimen/margin_large"
+            android:textColor="@color/colorSecondaryText" />
+
+        <FrameLayout
+            android:id="@+id/flTeamLogo"
+            android:layout_width="@dimen/dimen_50dp"
+            android:layout_height="@dimen/dimen_50dp"
+            android:layout_below="@id/tvClient"
+            android:layout_marginStart="@dimen/margin_large"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:background="@drawable/bg_circle_img_border_white">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center|center_vertical"
+                android:scaleType="centerCrop"
+                android:src="@drawable/shape" />
+
+        </FrameLayout>
+
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:id="@+id/spinner"
+            android:layout_marginEnd="@dimen/margin_large"
+            style="@style/Widget.AppCompat.Spinner.Underlined"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvClient"
+            android:layout_alignTop="@id/flTeamLogo"
+            android:entries="@array/clinetTeams"
+            android:layout_marginStart="@dimen/margin_medium"
+            android:layout_toEndOf="@id/flTeamLogo"
+            android:backgroundTint="@color/colorSecondaryText"
+            android:paddingBottom="@dimen/margin_medium_2"
+            android:textAlignment="textStart" />
+
+        <TextView
+            android:id="@+id/tvProjectName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/flTeamLogo"
+            android:layout_marginStart="@dimen/margin_large"
+            android:layout_marginTop="@dimen/margin_large_n"
+            android:fontFamily="@font/inter"
+            android:textSize="@dimen/text_small"
+            android:text="@string/project_name"
+            android:textColor="@color/colorSecondaryText" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/tvInputProjectNmae"
+            android:layout_marginStart="@dimen/margin_large"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvProjectName"
+            android:backgroundTint="@color/colorSecondaryText"
+            android:paddingBottom="@dimen/margin_medium_2"
+            android:layout_marginEnd="@dimen/margin_large"
+            android:text="Mobile App"
+            android:textColor="@color/white" />
+
+
+        <TextView
+            android:id="@+id/tvProjectDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvInputProjectNmae"
+            android:layout_marginTop="@dimen/margin_large_n"
+            android:fontFamily="@font/inter"
+            android:textSize="@dimen/text_small"
+            android:layout_marginStart="@dimen/margin_large"
+            android:text="PROJECT DATE"
+            android:textColor="@color/colorSecondaryText" />
+
+        <TextView
+            android:id="@+id/tvStartDate"
+            style="@style/Widget.AppCompat.Spinner.Underlined"
+            android:layout_marginStart="@dimen/margin_large"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvProjectDate"
+            android:text="Select Date"
+            android:textColor="@color/white"
+            android:drawablePadding="@dimen/margin_medium"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:layout_toStartOf="@id/ivSeparator"
+            android:backgroundTint="@color/colorSecondaryText"
+            android:drawableLeft="@drawable/ic_calendar"
+            android:drawableTint="@color/colorSecondaryText"
+            android:paddingBottom="@dimen/margin_medium_2" />
+
+        <View
+            android:id="@+id/ivSeparator"
+            android:layout_width="10dp"
+            android:layout_height="1dp"
+            android:layout_below="@id/tvProjectDate"
+            android:layout_alignTop="@id/tvStartDate"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/margin_medium_3"
+            android:background="@drawable/bg_separator" />
+
+        <TextView
+            android:id="@+id/tvEndDate"
+            style="@style/Widget.AppCompat.Spinner.Underlined"
+            android:layout_width="wrap_content"
+            android:layout_marginEnd="@dimen/margin_large"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvProjectDate"
+            android:text="Select Date"
+            android:textColor="@color/white"
+            android:drawablePadding="@dimen/margin_medium"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="@dimen/margin_medium_2"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:layout_toEndOf="@id/ivSeparator"
+            android:backgroundTint="@color/colorSecondaryText"
+            android:drawableLeft="@drawable/ic_calendar"
+            android:drawableTint="@color/colorSecondaryText"
+            android:paddingBottom="@dimen/margin_medium_2" />
+
+        <TextView
+            android:id="@+id/tvAssignee"
+            android:layout_marginStart="@dimen/margin_large"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvStartDate"
+            android:layout_marginTop="@dimen/margin_large_n"
+            android:fontFamily="@font/inter"
+            android:text="ASSIGNEE"
+            android:textSize="@dimen/text_small"
+            android:textColor="@color/colorSecondaryText" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvAssignee"
+            android:layout_marginStart="@dimen/margin_large"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dimen_50dp"
+            android:layout_below="@id/tvAssignee"
+            android:layout_marginTop="@dimen/margin_medium" />
+
+        <com.padc.csh.customuicomponentsassignment.customComponents.PlusIconView
+            android:id="@+id/ivPlus"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_below="@id/tvAssignee"
+            android:layout_marginStart="-10dp"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:layout_toEndOf="@id/rvAssignee"
+            android:elevation="@dimen/margin_card_medium_2"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/tvCategory"
+            android:layout_marginStart="@dimen/margin_large"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rvAssignee"
+            android:layout_marginTop="@dimen/margin_large_n"
+            android:fontFamily="@font/inter"
+            android:textSize="@dimen/text_small"
+            android:text="CATEGORY"
+            android:textColor="@color/colorSecondaryText" />
+
+        <LinearLayout
+            android:id="@+id/chipGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvCategory"
+            android:weightSum="3"
+            android:layout_marginStart="@dimen/margin_large"
+            android:layout_marginEnd="@dimen/margin_large"
+            app:singleSelection="true">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipDesign"
+                style="@style/Widget.MaterialComponents.Chip.Filter"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:checked="true"
+                android:fontFamily="@font/inter_medium"
+                android:text="Design"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+
+                app:checkedIconTint="@color/white"
+                app:checkedIconVisible="true"
+                app:chipBackgroundColor="@color/colorAccent"
+                app:chipCornerRadius="@dimen/margin_medium" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipFrontend"
+                style="@style/Widget.MaterialComponents.Chip.Filter"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_marginStart="@dimen/margin_medium"
+                android:layout_weight="1"
+                android:fontFamily="@font/inter_medium"
+                android:gravity="center"
+                android:text="Frontend"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                app:chipCornerRadius="@dimen/margin_medium" />
+
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipBackend"
+                style="@style/Widget.MaterialComponents.Chip.Filter"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_marginStart="@dimen/margin_medium"
+                android:layout_weight="1"
+                android:fontFamily="@font/inter_medium"
+                android:gravity="center"
+                android:text="Backend"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                app:chipCornerRadius="@dimen/margin_medium" />
+        </LinearLayout>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="@dimen/margin_medium"
+            android:layout_below="@id/chipGroup"
+           android:layout_alignParentBottom="true"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:layout_marginBottom="0dp"
+            app:cardCornerRadius="@dimen/margin_medium_2">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="@dimen/margin_medium_2">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/tvDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toStartOf="@id/flAttachment"
+                    android:fontFamily="@font/inter_medium"
+                    android:hint="Description"
+                    android:paddingBottom="@dimen/margin_medium_2"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black" />
+
+                <FrameLayout
+                    android:id="@+id/flAttachment"
+                    android:layout_width="@dimen/dimen_50dp"
+                    android:layout_height="@dimen/dimen_50dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="@dimen/margin_large"
+                    android:background="@drawable/bg_circle_border_grey">
+
+                    <ImageView
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="4dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/ic_attachment_file"
+                        app:tint="@color/colorAccent" />
+
+                </FrameLayout>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvAttachment"
+                    android:text="ATTACHMENTS"
+                    android:textSize="@dimen/text_small"
+                    android:layout_marginTop="@dimen/margin_medium_3"
+                    android:layout_below="@id/tvDescription"
+                    android:fontFamily="@font/inter_medium"
+                    android:textColor="@color/colorSecondaryText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/ivFileImg"
+                        android:layout_marginTop="@dimen/margin_medium"
+                        android:layout_width="@dimen/dimen_50dp"
+                        android:layout_height="@dimen/dimen_50dp"
+                        android:layout_below="@id/tvAttachment"
+                        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent"
+                        android:layout_marginStart="4dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/fileimg"
+                        />
+
+                <FrameLayout
+                    android:id="@+id/flClose"
+                    android:layout_width="@dimen/dimen_50dp"
+                    android:layout_height="@dimen/dimen_50dp"
+                    android:layout_alignParentEnd="true"
+                  android:layout_below="@id/tvAttachment"
+                    android:layout_marginTop="@dimen/margin_medium"
+                    android:background="@drawable/bg_circle_solid_grey"
+                    >
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center|center_vertical"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/ic_baseline_close_black_24" />
+
+                </FrameLayout>
+                <TextView
+                    android:id="@+id/tvReference"
+                    android:textColor="@color/black"
+                    android:text="Reference"
+                    android:layout_marginStart="@dimen/margin_medium_3"
+                    android:layout_below="@id/tvAttachment"
+                    android:layout_toEndOf="@id/ivFileImg"
+                    android:layout_alignTop="@id/ivFileImg"
+                    android:layout_marginTop="@dimen/margin_medium"
+                    android:textSize="@dimen/text_small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/tvFileUploadRate"
+                    android:textColor="@color/colorSecondaryText"
+                    android:text="123KB"
+                    android:layout_marginEnd="@dimen/margin_medium_3"
+                    android:layout_below="@id/tvAttachment"
+                    android:layout_toStartOf="@id/flClose"
+                    android:layout_alignTop="@id/flClose"
+                    android:layout_marginTop="@dimen/margin_medium"
+                    android:textSize="@dimen/text_small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+         <!--       <com.padc.csh.customuicomponentsassignment.customComponents.GoalProgressBar
+                    android:id="@+id/progressBar"
+                    android:layout_marginStart="@dimen/margin_medium_3"
+                    android:layout_below="@id/tvAttachment"
+                    android:layout_toEndOf="@id/ivFileImg"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:goalIndicatorHeight="16dp"
+                    app:goalIndicatorThickness="4dp"
+                    app:goalReachedColor="@color/green"
+                    app:goalNotReachedColor="@color/colorSecondaryText"
+                    app:unfilledSectionColor="@color/white"
+                    app:barThickness="4dp"
+                    app:indicatorType="square"
+                    />-->
+                <com.padc.csh.customuicomponentsassignment.customComponents.CustomProgressLine
+                    android:id="@+id/progressBar"
+                    android:layout_marginStart="@dimen/margin_medium_3"
+                    android:layout_below="@id/tvReference"
+                    android:layout_toEndOf="@id/ivFileImg"
+                    android:layout_toStartOf="@id/flClose"
+                    android:layout_marginEnd="@dimen/margin_medium"
+                    app:progressAmt="50"
+                    app:borderWidthProgressLine="3dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="3dp"/>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:text="CREATE TASK"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_regular_2x"
+                    android:fontFamily="@font/inter_medium"
+                    android:background="@drawable/bg_message"
+                    android:layout_below="@id/ivFileImg"
+                    android:layout_marginTop="@dimen/margin_large"
+                    android:layout_centerHorizontal="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"/>
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+    </RelativeLayout>
+</androidx.core.widget.NestedScrollView>
+
+
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

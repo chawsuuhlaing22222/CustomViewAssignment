@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/colorPrimaryDark">
+
+
+    <FrameLayout
+        android:id="@+id/flClose"
+        android:layout_width="@dimen/dimen_50dp"
+        android:layout_height="@dimen/dimen_50dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="@dimen/margin_medium_2"
+        android:layout_marginEnd="@dimen/margin_medium_2"
+        android:background="@drawable/bg_circle_img_border_white"
+      >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|center_vertical"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_baseline_close_black_24" />
+
+    </FrameLayout>
+
+    <RelativeLayout
+        android:background="@color/colorPrimary"
+        android:layout_below="@id/flClose"
+        android:layout_marginTop="@dimen/margin_large"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <include
+            android:id="@+id/viewPodProfileInfo"
+
+            layout="@layout/view_pod_profile"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content" />
+        <FrameLayout
+            android:id="@+id/flShare"
+            android:layout_width="@dimen/dimen_50dp"
+            android:layout_height="@dimen/dimen_50dp"
+            android:layout_alignParentStart="true"
+            android:layout_below="@id/viewPodProfileInfo"
+            android:layout_marginTop="@dimen/margin_large"
+            android:layout_marginStart="@dimen/margin_large"
+            android:background="@drawable/bg_circle_img_border_green"
+            >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|center_vertical"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_baseline_share_black_24"
+                app:tint="@color/colorAccent" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/flConfirm"
+            android:layout_width="@dimen/dimen_50dp"
+            android:layout_height="@dimen/dimen_50dp"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@id/viewPodProfileInfo"
+            android:layout_marginTop="@dimen/margin_large"
+            android:layout_marginEnd="@dimen/margin_large"
+            android:background="@drawable/bg_circle_img_border_green"
+            >
+
+            <ImageView
+                android:layout_width="@dimen/margin_large"
+                android:layout_height="@dimen/margin_large"
+                android:layout_gravity="center|center_vertical"
+                android:scaleType="fitCenter"
+                app:tint="@color/colorAccent"
+                android:src="@drawable/ic_confirm" />
+
+
+        </FrameLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:text="MESSAGE"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_regular_2x"
+            android:fontFamily="@font/inter_medium"
+            android:background="@drawable/bg_message"
+            android:layout_below="@id/viewPodProfileInfo"
+            android:layout_marginTop="@dimen/margin_large"
+            android:layout_centerHorizontal="true"
+            android:layout_width="200dp"
+            android:layout_height="50dp"/>
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabLayout"
+            app:tabTextAppearance="@style/tabText"
+            android:background="@color/colorPrimary"
+            android:layout_below="@id/flShare"
+            android:layout_marginTop="@dimen/margin_large"
+            app:tabGravity="center"
+            app:tabMode="scrollable"
+            app:tabTextColor="@color/colorSecondaryText"
+            app:tabSelectedTextColor="@color/colorPrimaryDark"
+            app:tabIndicatorColor="@color/colorAccent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvProjectTasks"
+            android:background="@color/colorPrimaryLight"
+            android:padding="@dimen/margin_medium_2"
+            android:layout_below="@id/tabLayout"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </RelativeLayout>
+
+
+
+</RelativeLayout>

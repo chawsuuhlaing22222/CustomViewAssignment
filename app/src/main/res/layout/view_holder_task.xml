@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorPrimary"
+    android:layout_marginTop="@dimen/margin_medium_2"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="@dimen/margin_medium">
+
+  <RelativeLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:padding="@dimen/margin_medium_2"
+      >
+     <androidx.appcompat.widget.AppCompatTextView
+         android:id="@+id/tvState"
+         android:text="@string/in_progress"
+         android:fontFamily="@font/inter_bold"
+         android:textColor="@color/colorProgress"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvDesign"
+        android:text="@string/design"
+        android:fontFamily="@font/inter_bold"
+        android:layout_alignParentEnd="true"
+        android:textColor="@color/colorSecondaryText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvContactPage"
+        android:text="@string/contact_page"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:layout_below="@id/tvState"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_regular_3x"
+        android:fontFamily="@font/inter_bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivMsg"
+        app:srcCompat="@drawable/ic_chat_msg"
+        app:tint="@color/colorSecondaryText"
+        android:layout_alignTop="@id/rvProfileVH"
+        android:layout_marginTop="@dimen/margin_medium_2"
+        android:layout_below="@id/tvContactPage"
+        android:scaleType="centerCrop"
+        android:layout_width="@dimen/margin_medium_3"
+        android:layout_height="@dimen/margin_medium_3"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvMsgCount"
+        android:text="3"
+        android:textSize="@dimen/text_regular_2x"
+        android:layout_marginLeft="@dimen/margin_small"
+        android:layout_alignTop="@id/rvProfileVH"
+        android:layout_toEndOf="@id/ivMsg"
+        android:layout_marginTop="@dimen/margin_card_medium_2"
+        android:layout_below="@id/tvContactPage"
+        android:textColor="@color/black"
+        android:fontFamily="@font/inter_bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivAttachment"
+        app:srcCompat="@drawable/ic_attachment_file"
+        android:scaleType="fitCenter"
+        android:layout_marginLeft="@dimen/margin_large"
+        android:layout_alignTop="@id/rvProfileVH"
+        app:tint="@color/colorSecondaryText"
+        android:layout_toEndOf="@id/tvMsgCount"
+        android:layout_marginTop="@dimen/margin_medium_2"
+        android:layout_below="@id/tvContactPage"
+        android:layout_width="@dimen/margin_medium_3"
+        android:layout_height="@dimen/margin_medium_3"/>
+
+    <FrameLayout
+        android:id="@+id/flAttachmentFileCount"
+        android:layout_alignTop="@id/rvProfileVH"
+        android:layout_toEndOf="@id/ivAttachment"
+        android:layout_marginTop="@dimen/margin_card_medium_2"
+        android:layout_below="@id/tvContactPage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+      <androidx.appcompat.widget.AppCompatTextView
+          android:id="@+id/tvAttachmentFileCount"
+          android:text="5"
+          android:textSize="@dimen/text_regular_2x"
+          android:textColor="@color/black"
+          android:fontFamily="@font/inter_bold"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"/>
+
+      <androidx.appcompat.widget.AppCompatImageView
+          app:srcCompat="@drawable/ic_circle_black"
+          app:tint="@color/colorProgress"
+          android:layout_marginLeft="@dimen/margin_medium"
+          android:layout_width="@dimen/margin_small"
+          android:layout_height="@dimen/margin_small"/>
+    </FrameLayout>
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvGroupName"
+        android:text="N 164"
+        android:layout_toStartOf="@id/rvProfileVH"
+        android:layout_below="@id/tvContactPage"
+        android:layout_marginTop="@dimen/margin_medium_3"
+        android:layout_marginEnd="@dimen/margin_medium"
+        android:textSize="@dimen/text_regular_2x"
+        android:textColor="@color/black"
+        android:fontFamily="@font/inter_bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvProfileVH"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="@dimen/margin_card_medium"
+        android:layout_below="@id/tvContactPage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+  </RelativeLayout>
+</com.google.android.material.card.MaterialCardView>
